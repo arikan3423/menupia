@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIA Café Bistro - Menü</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            color: #1a1a1a;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Header & Bilgiler */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 5px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Akordiyon Menü Yapısı */
+        .menu-container {
+            margin-top: 20px;
+        }
+
+        .accordion-btn {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 15px 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-btn:hover {
+            background-color: #333333;
+        }
+
+        /* Açılış artı/eksi ikonu */
+        .accordion-btn::after {
+            content: '+';
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .accordion-btn.active::after {
+            content: '−';
+        }
+
+        /* İçerik Alanı (Başta Gizli) */
+        .panel {
+            padding: 0 15px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-left: 2px solid #1a1a1a;
+            border-right: 2px solid #1a1a1a;
+            margin-bottom: 8px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        /* Panel aktifken sınır çizgisi düzeltmesi */
+        .accordion-btn.active {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-bottom: 0;
+        }
+
+        /* Menü Elemanları */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            font-size: 1rem;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+            padding-bottom: 15px;
+        }
+
+        .item-detail {
+            font-size: 0.85rem;
+            color: #666;
+            margin-left: 5px;
+        }
+
+        /* Footer Bilgileri */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .wifi-box {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo-text">PIA</div>
+        <div class="subtitle">Café Bistro</div>
+        
+        <div class="info-box">
+            <strong>Öffnungszeiten Bistro:</strong><br>
+            Montag bis Samstag: 08.00 - 22.00<br>
+            <em>Von Montag bis Samstag kochen wir Zmittag. Täglich wechselndes Angebot - siehe Tafel.</em>
+        </div>
+        
+        <p style="font-size: 0.9rem;">
+            Instagram: <a href="https://instagram.com/piacaffee" target="_blank" style="color: #1a1a1a; font-weight: bold;">@piacaffee</a><br>
+            Tel: +41 79 942 73 62<br>
+            Else-Züblin-Strasse 124, Winterthur
+        </p>
+    </div>
+
+    <div class="menu-container">
+
+        <!-- KAFFEE -->
+        <button class="accordion-btn">Kaffee</button>
+        <div class="panel">
+            <div class="menu-item"><span>Espresso</span> <span>CHF 4.00</span></div>
+            <div class="menu-item"><span>Espresso Doppio</span> <span>CHF 5.50</span></div>
+            <div class="menu-item"><span>Café Crème</span> <span>CHF 5.20</span></div>
+            <div class="menu-item"><span>Cappuccino</span> <span>CHF 5.80</span></div>
+            <div class="menu-item"><span>Flat White</span> <span>CHF 6.50</span></div>
+            <div class="menu-item"><span>Latte Macchiato</span> <span>CHF 6.80</span></div>
+            <div class="menu-item"><span>Café Latte</span> <span>CHF 6.80</span></div>
+            <div class="menu-item"><span>Iced Latte</span> <span>CHF 6.90</span></div>
+            <div class="menu-item"><span>Iced Americano</span> <span>CHF 5.80</span></div>
+            <div class="menu-item"><span>Chai Latte</span> <span>CHF 7.50</span></div>
+            <div class="menu-item"><span>Matcha Latte</span> <span>CHF 7.00</span></div>
+            <div class="menu-item"><span>Ovomaltine / Schokolade</span> <span>CHF 7.00</span></div>
+        </div>
+
+        <!-- TEE -->
+        <button class="accordion-btn">Tee</button>
+        <div class="panel">
+            <div class="menu-item"><span>English Breakfast</span> <span>CHF 6.50</span></div>
+            <div class="menu-item"><span>Earl Grey</span> <span>CHF 6.50</span></div>
+            <div class="menu-item"><span>Grüner Tee</span> <span>CHF 6.50</span></div>
+            <div class="menu-item"><span>Pfefferminztee</span> <span>CHF 6.50</span></div>
+            <div class="menu-item"><span>Ingwer-Zitronen-Tee</span> <span>CHF 6.50</span></div>
+            <div class="menu-item"><span>Kamillentee</span> <span>CHF 6.50</span></div>
+        </div>
+
+        <!-- HAUSGEMACHT -->
+        <button class="accordion-btn">Hausgemacht</button>
+        <div class="panel">
+            <div class="menu-item"><span>Hausgemachte Limonade</span> <span>CHF 7.50</span></div>
+            <div class="menu-item"><span>Hausgemachter Eistee</span> <span>CHF 7.50</span></div>
+            <div class="menu-item"><span>Beeren-Limonade</span> <span>CHF 7.90</span></div>
+        </div>
+
+        <!-- SOFTDRINKS -->
+        <button class="accordion-btn">Softdrinks</button>
+        <div class="panel">
+            <div class="menu-item"><span>Mineralwasser still</span> <span>CHF 5.00</span></div>
+            <div class="menu-item"><span>Mineralwasser mit Kohlensäure</span> <span>CHF 5.00</span></div>
+            <div class="menu-item"><span>Vivi Kola</span> <span>CHF 5.20</span></div>
+            <div class="menu-item"><span>Rivella Rot</span> <span>CHF 5.20</span></div>
+            <div class="menu-item"><span>Rivella Blau</span> <span>CHF 5.20</span></div>
+            <div class="menu-item"><span>Elmer Citro</span> <span>CHF 5.20</span></div>
+            <div class="menu-item"><span>Apfelschorle</span> <span>CHF 5.20</span></div>
+            <div class="menu-item"><span>Orangensaft frisch gepresst</span> <span>CHF 7.90</span></div>
+        </div>
+
+        <!-- BIER -->
+        <button class="accordion-btn">Bier</button>
+        <div class="panel">
+            <div class="menu-item"><span>Chopfab Lager <span class="item-detail">33 cl</span></span> <span>CHF 7.00</span></div>
+            <div class="menu-item"><span>Heineken <span class="item-detail">33 cl</span></span> <span>CHF 7.00</span></div>
+            <div class="menu-item"><span>Alkoholfreies Bier</span> <span>CHF 7.00</span></div>
+        </div>
+
+        <!-- WEIN -->
+        <button class="accordion-btn">Wein</button>
+        <div class="panel">
+            <div class="menu-item"><span>Weisswein <span class="item-detail">1 dl</span></span> <span>CHF 8.50</span></div>
+            <div class="menu-item"><span>Rotwein <span class="item-detail">1 dl</span></span> <span>CHF 8.50</span></div>
+            <div class="menu-item"><span>Prosecco <span class="item-detail">1 dl</span></span> <span>CHF 9.00</span></div>
+        </div>
+
+        <!-- COCKTAIL -->
+        <button class="accordion-btn">Cocktail</button>
+        <div class="panel">
+            <div class="menu-item"><span>Aperol Spritz</span> <span>CHF 14.00</span></div>
+            <div class="menu-item"><span>Hugo</span> <span>CHF 14.00</span></div>
+            <div class="menu-item"><span>Gin Tonic</span> <span>CHF 15.00</span></div>
+            <div class="menu-item"><span>Moscow Mule</span> <span>CHF 15.00</span></div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Alle Preise in Schweizer Franken und inklusive 8,1 Prozent Mehrwertsteuer.</p>
+        <div class="wifi-box">
+            📶 Wi-Fi: Pia | Pwd: Pia01082026.!
+        </div>
+    </div>
+
+    <!-- Tıklama Dinamiğini Sağlayan JavaScript -->
+    <script>
+        const acc = document.getElementsByClassName("accordion-btn");
+        
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                // Tıklanan başlığa aktif klasını ekle/çıkar (Artı/Eksi ikonu için)
+                this.classList.toggle("active");
+                
+                // Alt paneli seç
+                const panel = this.nextElementSibling;
+                
+                // Açık/Kapalı olma durumuna göre yüksekliği ayarla (Animasyonlu geçiş sağlar)
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
